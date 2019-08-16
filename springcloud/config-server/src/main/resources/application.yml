@@ -1,0 +1,21 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # git \u4ED3\u5E93\u914D\u7F6E\u6587\u4EF6\u5730\u5740
+          uri: https://github.com/HelloKai3/config-repo.git
+          username: HelloKai3
+          password: yuankai952109
+          # \u6307\u5B9A\u5339\u914D\u67E5\u8BE2\u7684\u8DEF\u5F84\u540D
+          search-paths: config-repo
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka/
+

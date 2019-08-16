@@ -1,0 +1,27 @@
+# 注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        # 开启读取权限
+        enabled: true
+        # 配置中心服务名
+        service-id: config-server
+
+  # 开启所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
